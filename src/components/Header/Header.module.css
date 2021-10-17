@@ -1,0 +1,19 @@
+
+.Header{
+  background-image: url(../../fon20.jpg);
+    grid-area: h;
+    background-size: 1500px;
+  }
+  
+  .Header img{
+    height: 110px;
+  }
+
+  .loginBlock {
+    float: right;
+    color: white;
+  }
+
+  .loginBlock a {
+    color: white;
+  }

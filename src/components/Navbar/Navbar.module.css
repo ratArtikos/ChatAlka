@@ -1,0 +1,16 @@
+.Nav{
+    grid-area: n;
+    background-image: url(../../fon3.jpg);
+    padding: 15px;
+    background-size: 2000px;
+  }
+
+.item a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.item a.active {
+    color: rgb(29, 245, 0);
+}
+
