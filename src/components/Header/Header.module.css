@@ -1,19 +1,21 @@
 
 .Header{
-  background-image: url(../../fon20.jpg);
+  background-color: rgb(29, 245, 0);
+  background: linear-gradient(180deg, rgb(29, 245, 0) 10%, rgb(36, 36, 36) 100%);
     grid-area: h;
-    background-size: 1500px;
   }
   
   .Header img{
-    height: 110px;
+    height: 114.3px;
   }
 
   .loginBlock {
     float: right;
-    color: white;
+    color: rgb(36, 36, 36);
   }
 
   .loginBlock a {
-    color: white;
+    color:rgb(36, 36, 36);
   }
+
+ 

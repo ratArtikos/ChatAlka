@@ -6,12 +6,10 @@
   grid-template-areas: "h h"
   "n c"; 
   margin: 0 auto;
-  margin-left: 50px;
-  margin-right: 50px;
-}
+  }
 
 .App-wrapper-content {
     grid-area: c;
-    background-image: url(fon.jpg);
-    background-size: 1335PX;
+    background-color: rgb(70, 70, 70);
+    background-size: 2000px;
 }

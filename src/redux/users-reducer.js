@@ -95,38 +95,35 @@ export const toogleFollowingProgress = (isFetching, userId) =>
 //
 
 export const requestUsers = (page, pageSize) => {
-    return (dispatch) => {
+    return async (dispatch) => {
         dispatch(toogleIsFetching(true));
         dispatch(setCurrentPage(page));
-        userAPI.getUsers(page, pageSize).then(data => {
+        const data = await userAPI.getUsers(page, pageSize);
             dispatch(toogleIsFetching(false));
             dispatch(setUsers(data.items));
             dispatch(setUsersTotalCount(data.totalCount));
-        })
     }
 }
 
 export const unfollow = (userId) => {
-    return (dispatch) => {
+    return async (dispatch) => {
         dispatch(toogleFollowingProgress(true, userId));
-        userAPI.unfollow(userId).then(data => {
+        const data = await userAPI.unfollow(userId);
             if (data.resultCode == 0) {
                 dispatch(unfollowSuccess(userId));
             }
             dispatch(toogleFollowingProgress(false, userId));
-        })
     }
 }
 
 export const follow = (userId) => {
-    return (dispatch) => {
+    return async (dispatch) => {
         dispatch(toogleFollowingProgress(true, userId));
-        userAPI.follow(userId).then(data => {
+        const data = await userAPI.follow(userId)
             if (data.resultCode == 0) {
                 dispatch(followSuccess(userId));
             }
             dispatch(toogleFollowingProgress(false, userId));
-        })
     }
 }
 //

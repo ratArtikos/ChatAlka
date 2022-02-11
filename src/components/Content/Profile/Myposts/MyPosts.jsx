@@ -7,7 +7,22 @@ import { Field, reduxForm } from 'redux-form';
 import { maxLengthCreator, required } from '../../../../utils/validators/validators';
 import { Textarea } from '../../common/FormsControls/Forms';
 
-const MyPosts = (props) => {
+
+const MyPosts = React.memo(props => {
+
+    /*componentDidMount(){
+        setTimeout(()=>{
+            this.setState({a:12});
+        }, 3000)
+    }*/
+
+    /*shouldComponentUpdate(nextProps, nextState){
+        return nextProps!=this.props || nextState!=this.state;
+    }*/
+
+
+    console.log("RENDER 1");
+
     let postsElements = props.postsData
         .map(post => <Post like={post.like} message={post.message} id={post.id} key={post.id} />);
 
@@ -15,24 +30,26 @@ const MyPosts = (props) => {
         props.onAddPost(values.newPost)
     }
 
-    return (
-        <div className={s.myPosts}>
+        return (
+            <div className={s.myPosts}>
 
-            <Display4 success>My posts</Display4>
-            <AddNewPostFormRedux onSubmit={newPostText}/>
-            <div className={s.posts}>
-                {postsElements}
+                <Display4 success>My posts</Display4>
+                <AddNewPostFormRedux onSubmit={newPostText} />
+                <div className={s.posts}>
+                    {postsElements}
+                </div>
             </div>
-        </div>
-        
-    )
-}
 
-const maxLength30 =  maxLengthCreator(30);
+        )
+    })
+
+
+
+const maxLength30 = maxLengthCreator(30);
 
 const AddnewPostForm = (props) => {
     return <form onSubmit={props.handleSubmit}>
-        <Field component={Textarea} name='newPost' placeholder='Enter your MEGAPOST' validate={[required, maxLength30]}/> 
+        <Field component={Textarea} name='newPost' placeholder='Enter your MEGAPOST' validate={[required, maxLength30]} />
         <Button success outline>Add post</Button>
     </form>
 }

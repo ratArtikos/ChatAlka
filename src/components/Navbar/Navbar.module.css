@@ -1,8 +1,7 @@
 .Nav{
     grid-area: n;
-    background-image: url(../../fon3.jpg);
+    background: linear-gradient(90deg, rgb(29, 245, 0) 10%, rgb(36, 36, 36) 100%);
     padding: 15px;
-    background-size: 2000px;
   }
 
 .item a{
@@ -11,6 +10,6 @@
 }
 
 .item a.active {
-    color: rgb(29, 245, 0);
+    color: rgb(36, 36, 36);
 }
 
